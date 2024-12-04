@@ -1,3 +1,15 @@
-<div class="p-4">
-  <button class="btn btn-primary">Кнопка</button>
+---
+import { getCollection } from "astro:content";
+const blog = await getCollection("blog");
+---
+
+<div class="p-4 space-y-2">
+  {
+    blog.map((post) => (
+      <div class="flex gap-4">
+        <div class="w-64">{post.id}</div>
+        <div>{post.data.title}</div>
+      </div>
+    ))
+  }
 </div>
