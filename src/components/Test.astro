@@ -8,6 +8,7 @@ const blog = await getCollection("blog");
     blog.map((post) => (
       <div class="flex gap-4">
         <div class="w-64">{post.id}</div>
+        <div class="w-52">{post.data.date}</div>
         <div>{post.data.title}</div>
       </div>
     ))
