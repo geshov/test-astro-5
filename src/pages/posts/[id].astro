@@ -16,7 +16,7 @@ const { Content } = await render(post);
 ---
 
 <Layout>
-  <Post post={post}>
+  <Post client:idle post={post}>
     <Content />
   </Post>
 </Layout>
