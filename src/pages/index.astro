@@ -3,7 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import Blog from "../components/Blog.svelte";
 
 import { getCollection } from "astro:content";
-const blog = await getCollection("blog");
+import { sortPosts } from "../utils/helpers";
+
+const blog = sortPosts(await getCollection("blog"));
 ---
 
 <Layout>
