@@ -8,7 +8,7 @@
 
     <div class="space-y-8">
       {#each blog as post}
-        <a href="/posts/{post.id}" class="flex gap-6 link link-primary">
+        <a href="/posts/{post.id}" class="flex gap-4 link link-primary">
           <div class="w-44 shrink-0">
             {#await import(`../../content/blog/${post.id}/thumbnail.jpg`) then img}
               <img
