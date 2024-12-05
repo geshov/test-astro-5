@@ -2,7 +2,7 @@
   let { blog } = $props();
 </script>
 
-<div class="p-4">
+<div class="p-6">
   <div class="prose mx-auto">
     <h1>Блог</h1>
 
