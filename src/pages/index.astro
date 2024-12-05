@@ -1,9 +1,11 @@
 ---
-// import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
 import Test from "../components/Test.astro";
+
+import { getCollection } from "astro:content";
+const blog = await getCollection("blog");
 ---
 
 <Layout>
-  <Test />
+  <Test blog={blog} />
 </Layout>
