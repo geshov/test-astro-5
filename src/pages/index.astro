@@ -8,6 +8,6 @@ import { sortPosts } from "../utils/helpers";
 const blog = sortPosts(await getCollection("blog"));
 ---
 
-<Layout>
+<Layout title="Блог">
   <Blog client:idle blog={blog} />
 </Layout>

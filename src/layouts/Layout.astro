@@ -1,5 +1,7 @@
 ---
 import "@fontsource-variable/manrope";
+
+const { title } = Astro.props;
 ---
 
 <html lang="ru">
@@ -8,7 +10,7 @@ import "@fontsource-variable/manrope";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro 5 Blog</title>
+    <title>Astro 5 | {title}</title>
   </head>
 
   <body>
