@@ -11,7 +11,7 @@
     <div class="space-y-8">
       {#each blog as post}
         <a href="/posts/{post.id}" class="flex gap-4 no-underline">
-          <div class="w-1/3 aspect-[2000/1333] shrink-0">
+          <div class="w-1/3 aspect-[3/2] shrink-0">
             <Tthumbnail
               id={post.id}
               sizes="(min-width: 635px) 212px, 30vw"
