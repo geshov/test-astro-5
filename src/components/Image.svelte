@@ -1,0 +1,18 @@
+<script>
+  let { id, sizes = "", alt = "" } = $props();
+  const thumbnail = import(
+    `../../content/blog/${id}/thumbnail.jpg?enhanced&w=800;600;400`
+  );
+</script>
+
+{#await thumbnail then src}
+  <enhanced:img src={src.default} {sizes} {alt} class="m-0 rounded-box"
+  ></enhanced:img>
+{/await}
+
+<!-- svelte-ignore css_unused_selector -->
+<style>
+  picture {
+    @apply m-0;
+  }
+</style>
