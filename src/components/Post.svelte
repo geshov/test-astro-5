@@ -4,7 +4,7 @@
 
 <div class="p-6">
   <div class="prose mx-auto">
-    <h1>{post.data.title}</h1>
+    <h1>{post.data.description}</h1>
 
     {@render children()}
   </div>
