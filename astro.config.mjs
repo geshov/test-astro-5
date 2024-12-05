@@ -3,6 +3,7 @@ import { defineConfig } from "astro/config";
 
 import tailwind from "@astrojs/tailwind";
 import svelte from "@astrojs/svelte";
+import { enhancedImages } from "@sveltejs/enhanced-img";
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,4 +12,8 @@ export default defineConfig({
   },
 
   integrations: [tailwind(), svelte()],
+
+  vite: {
+    plugins: [enhancedImages()],
+  },
 });
