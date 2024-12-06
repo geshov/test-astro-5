@@ -1,11 +1,14 @@
 <script>
   let { id, sizes = "", alt = "" } = $props();
+
   const thumbnail = import(
     `../../content/blog/${id}/thumbnail.jpg?enhanced&w=800;600;400`
   );
 </script>
 
-{#await thumbnail then src}
+{#await thumbnail}
+  <div class="skeleton w-full aspect-[3/2]"></div>
+{:then src}
   <enhanced:img src={src.default} {sizes} {alt} class="m-0 rounded-box"
   ></enhanced:img>
 {/await}
