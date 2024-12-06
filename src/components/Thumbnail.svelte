@@ -1,16 +1,11 @@
 <script>
   let { id, sizes = "", alt = "" } = $props();
-
-  const thumbnail = import(
-    `../../content/blog/${id}/thumbnail.jpg?enhanced&w=1000;800;600;400`
-  );
 </script>
 
-{#await thumbnail}
+{#await import(`../../content/blog/${id}/thumbnail.jpg?enhanced&w=1000;800;600;400`)}
   <div class="skeleton w-full aspect-[3/2]"></div>
-{:then src}
-  <enhanced:img src={src.default} {sizes} {alt} class="w-full rounded-box"
-  ></enhanced:img>
+{:then { default: src }}
+  <enhanced:img {src} {sizes} {alt} class="w-full rounded-box"></enhanced:img>
 {/await}
 
 <!-- svelte-ignore css_unused_selector -->
