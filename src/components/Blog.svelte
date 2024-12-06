@@ -16,7 +16,7 @@
           <div>
             <Tthumbnail
               id={post.id}
-              sizes="(min-width: 635px) 212px, 30vw"
+              sizes="(min-width: 640px) 201px, 90vw"
               alt={post.data.title} />
           </div>
 
