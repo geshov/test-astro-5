@@ -9,7 +9,7 @@
 {#await thumbnail}
   <div class="skeleton w-full aspect-[3/2]"></div>
 {:then src}
-  <enhanced:img src={src.default} {sizes} {alt} class="rounded-box"
+  <enhanced:img src={src.default} {sizes} {alt} class="w-full rounded-box"
   ></enhanced:img>
 {/await}
 
