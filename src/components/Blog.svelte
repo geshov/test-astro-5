@@ -1,5 +1,5 @@
 <script>
-  import Tthumbnail from "./Tthumbnail.svelte";
+  import Thumbnail from "./Thumbnail.svelte";
 
   let { blog } = $props();
 </script>
@@ -14,7 +14,7 @@
           href="/posts/{post.id}"
           class="grid grid-cols-1 sm:grid-cols-3 gap-4 no-underline">
           <div>
-            <Tthumbnail
+            <Thumbnail
               id={post.id}
               sizes="(min-width: 640px) 201px, 90vw"
               alt={post.data.title} />
