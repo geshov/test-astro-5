@@ -2,7 +2,7 @@
   let { id, sizes = "", alt = "" } = $props();
 
   const thumbnail = import(
-    `../../content/blog/${id}/thumbnail.jpg?enhanced&w=800;600;400`
+    `../../content/blog/${id}/thumbnail.jpg?enhanced&w=1000;800;600;400`
   );
 </script>
 
