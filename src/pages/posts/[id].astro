@@ -1,5 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
+import { Picture } from "astro:assets";
+
 import Layout from "../../layouts/Layout.astro";
 import Post from "../../components/Post.svelte";
 
@@ -13,10 +15,24 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+
+const { default: thumbnail } = await import(
+  `../../../content/blog/${post.id}/thumbnail.jpg`
+);
 ---
 
 <Layout title={post.data.title}>
   <Post client:idle post={post}>
+    <Picture
+      src={thumbnail}
+      formats={["avif", "webp"]}
+      widths={[1000, 800, 6600, 400]}
+      sizes="(min-width: 640px) 375px, 90vw"
+      class="rounded-box"
+      alt={post.data.title}
+      slot="thumbnail"
+    />
+
     <Content />
   </Post>
 </Layout>

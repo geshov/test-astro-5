@@ -1,1 +1,2 @@
+clear
 npx astro build

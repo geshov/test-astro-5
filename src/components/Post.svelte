@@ -1,8 +1,7 @@
 <script>
   import anime from "animejs";
-  import Thumbnail from "./Thumbnail.svelte";
 
-  let { post, children } = $props();
+  let { post, children, thumbnail } = $props();
 
   let day, month, year;
 
@@ -33,12 +32,9 @@
   <div class="prose mx-auto">
     <h1>{post.data.description}</h1>
 
-    <div class="grid grid-cols-1 sm:grid-cols-5 gap-4 my-10">
+    <div class="grid grid-cols-1 sm:grid-cols-5 gap-4">
       <div class="sm:col-span-3">
-        <Thumbnail
-          id={post.id}
-          sizes="(min-width: 640px) 375px, 90vw"
-          alt={post.data.title} />
+        {@render thumbnail()}
       </div>
 
       <div
