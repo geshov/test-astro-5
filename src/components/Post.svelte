@@ -33,15 +33,16 @@
   <div class="prose mx-auto">
     <h1>{post.data.description}</h1>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-10">
-      <div>
+    <div class="grid grid-cols-1 sm:grid-cols-5 gap-4 my-10">
+      <div class="sm:col-span-3">
         <Thumbnail
           id={post.id}
-          sizes="(min-width: 640px) 310px, 90vw"
+          sizes="(min-width: 640px) 375px, 90vw"
           alt={post.data.title} />
       </div>
 
-      <div class="flex justify-center items-center text-2xl font-bold">
+      <div
+        class="flex justify-center items-center text-2xl font-bold sm:col-span-2">
         <div bind:this={day}></div>
         .
         <div bind:this={month}></div>
