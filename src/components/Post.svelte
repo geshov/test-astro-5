@@ -8,7 +8,7 @@
   <div class="prose mx-auto">
     <h1>{post.data.description}</h1>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 my-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-10">
       <div>
         <Thumbnail
           id={post.id}
