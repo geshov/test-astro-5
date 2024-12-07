@@ -26,10 +26,11 @@ const { default: thumbnail } = await import(
     <Picture
       src={thumbnail}
       formats={["avif", "webp"]}
-      widths={[1000, 800, 6600, 400]}
+      widths={[1000, 800, 600, 400]}
       sizes="(min-width: 640px) 375px, 90vw"
       class="rounded-box"
       alt={post.data.title}
+      loading="eager"
       slot="thumbnail"
     />
 

@@ -14,8 +14,8 @@
   $effect(() => {
     anime({
       targets: date,
-      day: [0, date.day],
-      month: [0, date.month],
+      day: [1, date.day],
+      month: [1, date.month],
       year: [2000, date.year],
       easing: "linear",
       round: 1,
@@ -39,11 +39,11 @@
 
       <div
         class="flex justify-center items-center text-2xl font-bold sm:col-span-2">
-        <div bind:this={day}></div>
+        <div bind:this={day}>01</div>
         .
-        <div bind:this={month}></div>
+        <div bind:this={month}>01</div>
         .
-        <div bind:this={year}></div>
+        <div bind:this={year}>2000</div>
       </div>
     </div>
 
