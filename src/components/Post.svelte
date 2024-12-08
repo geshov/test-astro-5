@@ -2,7 +2,6 @@
   import anime from "animejs";
 
   import Thumbnail from "./Thumbnail.svelte";
-  import { scale } from "svelte/transition";
 
   let { post, children } = $props();
 
