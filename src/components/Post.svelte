@@ -34,7 +34,7 @@
   <div class="prose mx-auto">
     <h1>{post.data.description}</h1>
 
-    <div class="grid grid-cols-1 sm:grid-cols-5 gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-5 gap-4 my-8">
       <div class="sm:col-span-3">
         <Thumbnail
           {post}
