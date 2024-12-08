@@ -23,6 +23,7 @@ const { default: src } = await import(
 post.data.thumbnail = await getImage({
   src: src,
   widths: [1000, 800, 600, 400],
+  loading: "eager",
 });
 ---
 
