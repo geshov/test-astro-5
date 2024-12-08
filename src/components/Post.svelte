@@ -2,10 +2,11 @@
   import anime from "animejs";
 
   import Thumbnail from "./Thumbnail.svelte";
+  import { scale } from "svelte/transition";
 
   let { post, children } = $props();
 
-  let day, month, year;
+  let thumbnail, day, month, year;
 
   const date = {
     day: post.data.date.getDate(),
@@ -14,6 +15,11 @@
   };
 
   $effect(() => {
+    anime({
+      targets: thumbnail,
+      scale: 1,
+    });
+
     anime({
       targets: date,
       day: [1, date.day],
@@ -35,7 +41,10 @@
     <h1>{post.data.description}</h1>
 
     <div class="grid grid-cols-1 sm:grid-cols-5 gap-4 my-8">
-      <div class="sm:col-span-3">
+      <div
+        bind:this={thumbnail}
+        class="sm:col-span-3"
+        style="transform: scale(0)">
         <Thumbnail
           {post}
           sizes="(min-width: 640px) 375px, 90vw"
