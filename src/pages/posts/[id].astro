@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
-import { getImage } from "astro:assets";
+import { getThumbnail } from "../../utils/helpers";
 
 import Layout from "../../layouts/Layout.astro";
 import Post from "../../components/Post.svelte";
@@ -16,15 +16,7 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 
-const { default: src } = await import(
-  `../../../content/blog/${post.id}/thumbnail.jpg`
-);
-
-post.data.thumbnail = await getImage({
-  src: src,
-  widths: [1000, 800, 600, 400],
-  loading: "eager",
-});
+post.data.thumbnail = await getThumbnail(post, "eager");
 ---
 
 <Layout title={post.data.title}>

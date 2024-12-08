@@ -1,30 +1,18 @@
 ---
-import { getImage } from "astro:assets";
+import { getCollection } from "astro:content";
+import { sortPosts, getThumbnail } from "../utils/helpers";
 
 import Layout from "../layouts/Layout.astro";
 import Blog from "../components/Blog.svelte";
 
-import { getCollection } from "astro:content";
-import { sortPosts } from "../utils/helpers";
-
-const blog = sortPosts(await getCollection("blog"));
-
-const thumbnailBlog = await Promise.all(
-  blog.map(async (post) => {
-    const { default: src } = await import(
-      `../../content/blog/${post.id}/thumbnail.jpg`
-    );
-
-    post.data.thumbnail = await getImage({
-      src: src,
-      widths: [1000, 800, 600, 400],
-    });
-
+const blog = await Promise.all(
+  sortPosts(await getCollection("blog")).map(async (post) => {
+    post.data.thumbnail = await getThumbnail(post);
     return post;
   })
 );
 ---
 
 <Layout title="Блог">
-  <Blog client:idle blog={thumbnailBlog} />
+  <Blog client:idle blog={blog} />
 </Layout>
