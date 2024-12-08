@@ -1,6 +1,8 @@
 <script>
   import anime from "animejs";
 
+  import Thumbnail from "./Thumbnail.svelte";
+
   let { post, children } = $props();
 
   let day, month, year;
@@ -34,13 +36,10 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-5 gap-4">
       <div class="sm:col-span-3">
-        <img
-          src={post.data.thumbnail.src}
-          srcset={post.data.thumbnail.srcSet.attribute}
-          sizes="(min-width: 640px) 245px, 90vw"
-          class="rounded-box m-0"
-          alt={post.data.title}
-          {...post.data.thumbnail.attributes} />
+        <Thumbnail
+          {post}
+          sizes="(min-width: 640px) 375px, 90vw"
+          class="rounded-box m-0" />
       </div>
 
       <div

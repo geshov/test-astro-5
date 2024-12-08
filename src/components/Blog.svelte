@@ -1,4 +1,6 @@
 <script>
+  import Thumbnail from "./Thumbnail.svelte";
+
   let { blog } = $props();
 </script>
 
@@ -12,13 +14,10 @@
           href="/posts/{post.id}"
           class="grid grid-cols-1 sm:grid-cols-5 gap-4 no-underline">
           <div class="sm:col-span-2">
-            <img
-              src={post.data.thumbnail.src}
-              srcset={post.data.thumbnail.srcSet.attribute}
+            <Thumbnail
+              {post}
               sizes="(min-width: 640px) 245px, 90vw"
-              class="rounded-box m-0"
-              alt={post.data.title}
-              {...post.data.thumbnail.attributes} />
+              class="rounded-box m-0" />
           </div>
 
           <div class="space-y-0 sm:col-span-3">
