@@ -21,7 +21,7 @@ const { Content } = await render(post);
 post.data.thumbnail = await getThumbnail(post, "eager");
 ---
 
-<Layout title={post.data.title}>
+<Layout title={post.data.title} description={post.data.description}>
   <Post client:idle post={post}>
     <Content />
   </Post>

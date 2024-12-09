@@ -13,6 +13,8 @@ const blog = await Promise.all(
 );
 ---
 
-<Layout title="Блог">
+<Layout
+  title="Блог"
+  description="Простейший блог для тестирования Astro 5 с интеграцией Svelte 5">
   <Blog client:idle blog={blog} />
 </Layout>
