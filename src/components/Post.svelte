@@ -17,6 +17,7 @@
     anime({
       targets: thumbnail,
       scale: [0, 1],
+      delay: 250,
     });
 
     anime({
