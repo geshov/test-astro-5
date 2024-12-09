@@ -16,7 +16,7 @@
   $effect(() => {
     anime({
       targets: thumbnail,
-      scale: 1,
+      scale: [0, 1],
     });
 
     anime({

@@ -1,0 +1,3 @@
+.prose p img {
+  @apply rounded-box;
+}
