@@ -51,13 +51,11 @@
           class="rounded-box m-0" />
       </div>
 
-      <div
-        class="flex justify-center items-center text-2xl font-bold sm:col-span-2">
-        <div bind:this={day}>01</div>
-        .
-        <div bind:this={month}>01</div>
-        .
-        <div bind:this={year}>2000</div>
+      <div class="flex justify-center items-center sm:col-span-2">
+        <div class="text-2xl font-bold">
+          <span bind:this={day}>01</span>.<span bind:this={month}>01</span
+          >.<span bind:this={year}>2000</span>
+        </div>
       </div>
     </div>
 
